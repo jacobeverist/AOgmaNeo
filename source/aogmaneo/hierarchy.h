@@ -28,32 +28,32 @@ public:
         IO_Type type;
 
         int num_dendrites_per_cell; // also for policy
-        int value_num_dendrites_per_cell; // value function dendrites
 
         int up_radius; // encoder radius
         int down_radius; // decoder radius, also shared with actor if there is one
 
         int value_size; // resution of values for RL
+        int value_num_dendrites_per_cell; // value function dendrites
         int history_capacity; // max actor credit assignment horizon
 
         IO_Desc(
             const Int3 &size = Int3(5, 5, 16),
             IO_Type type = prediction,
             int num_dendrites_per_cell = 4,
-            int value_num_dendrites_per_cell = 2,
             int up_radius = 2,
             int down_radius = 2,
             int value_size = 128,
+            int value_num_dendrites_per_cell = 2,
             int history_capacity = 512
         )
         :
         size(size),
         type(type),
         num_dendrites_per_cell(num_dendrites_per_cell),
-        value_num_dendrites_per_cell(value_num_dendrites_per_cell),
         up_radius(up_radius),
         down_radius(down_radius),
         value_size(value_size),
+        value_num_dendrites_per_cell(value_num_dendrites_per_cell),
         history_capacity(history_capacity)
         {}
     };
