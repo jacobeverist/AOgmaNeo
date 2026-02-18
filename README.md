@@ -1,4 +1,4 @@
-# AOgmaNeo
+# Rust Port of AOgmaNeo  (OgmaNeoRs)
 
 A Rust port of the [AOgmaNeo](https://github.com/ogmacorp/AOgmaNeo) library by [Ogma Intelligent Systems Corp](https://ogmacorp.com). AOgmaNeo implements **Sparse Predictive Hierarchies (SPH)** — a biologically-inspired online machine learning system with a low compute footprint that learns from streaming data without forgetting.
 
