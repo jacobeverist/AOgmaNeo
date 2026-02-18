@@ -89,23 +89,30 @@ cargo run --release --example wave_prediction
 
 These examples drive [Gymnasium](https://gymnasium.farama.org/) environments via PyO3.
 
-**Setup** — create an ARM64 virtual environment and install gymnasium:
+**1. Create a virtual environment using the ARM64 Homebrew Python:**
+
+On Apple Silicon, use the Homebrew Python explicitly to ensure the ARM64 architecture matches the Rust binary:
 
 ```bash
-python3 -m venv .venv
+/opt/homebrew/bin/python3 -m venv .venv
 source .venv/bin/activate
 pip install gymnasium
 pip install "gymnasium[box2d]"   # needed for LunarLander
+deactivate
 ```
 
-**Run** — the examples automatically detect the `.venv` directory, so no activation is needed:
+**2. Build with the venv interpreter:**
+
+```bash
+PYO3_PYTHON=.venv/bin/python3 cargo build --release --features gymnasium-examples
+```
+
+**3. Run** — the examples automatically detect the `.venv` directory, so no activation is needed:
 
 ```bash
 cargo run --release --example cartpole_env_runner --features gymnasium-examples
 cargo run --release --example lunarlander --features gymnasium-examples
 ```
-
-The examples check `$VIRTUAL_ENV` (set by `source .venv/bin/activate`) and fall back to a `.venv` directory in the current working directory. Activating the venv first also works if you prefer.
 
 ---
 
