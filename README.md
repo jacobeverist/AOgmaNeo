@@ -96,8 +96,7 @@ On Apple Silicon, use the Homebrew Python explicitly to ensure the ARM64 archite
 ```bash
 /opt/homebrew/bin/python3 -m venv .venv
 source .venv/bin/activate
-pip install gymnasium
-pip install "gymnasium[box2d]"   # needed for LunarLander
+pip install gymnasium "gymnasium[box2d]"
 deactivate
 ```
 
@@ -159,6 +158,7 @@ examples/
   cartpole_env_runner.rs  — CartPole-v1 via gymnasium (requires --features gymnasium-examples)
   lunarlander.rs          — LunarLander-v3 via gymnasium (requires --features gymnasium-examples)
 cpp_ref/           — original C++ source (reference only)
+python_ref/        — original Python examples using PyAOgmaNeo (reference only)
 doc/               — documentation
 ```
 
